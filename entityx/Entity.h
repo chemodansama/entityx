@@ -374,8 +374,8 @@ class EntityManager : entityx::help::NonCopyable {
       next();
       return *static_cast<Delegate*>(this);
     }
-    bool operator == (const Delegate& rhs) const { return i_ == rhs.i_; }
-    bool operator != (const Delegate& rhs) const { return i_ != rhs.i_; }
+    bool operator == (const ViewIterator<Delegate, All>& rhs) const { return i_ == rhs.i_; }
+    bool operator != (const ViewIterator<Delegate, All>& rhs) const { return i_ != rhs.i_; }
     Entity operator * () { return Entity(manager_, manager_->create_id(i_)); }
     const Entity operator * () const { return Entity(manager_, manager_->create_id(i_)); }
 
